@@ -73,42 +73,42 @@ public class PredmetProdaje implements Serializable, DomainObject {
 
     @Override
     public String getTableName() {
-        return "n/a";
+        return "predmet_prodaje";
     }
 
     @Override
     public String getAttributeNamesForInsert() {
-        return "n/a";
+        return "PredmetProdajeID, Naziv, CenaBezPoreza, CenaSaPorezom, PoreskaStopaID";
     }
 
     @Override
     public String getAttributeValuesForInsert() {
-        return "n/a";
+        return "'" + predmetProdajeID + "', '" + naziv + "', '" + cenaBezPoreza + "', '" + cenaSaPorezom + "', '" + poreskaStopa.getPoreskaStopaID() + "'";
     }
 
     @Override
     public boolean isAutoincrement() {
-        return false;
+        return true;
     }
 
     @Override
     public void setObjectId(Long id) {
-
+        setPredmetProdajeID(id);
     }
 
     @Override
     public String getAttributeNamesForUpdate() {
-        return "n/a";
+        return "Naziv = '" + naziv + "', CenaBezPoreza = '" + cenaBezPoreza + "', CenaSaPorezom = '" + cenaSaPorezom + "', PoreskaStopaID = '" + poreskaStopa.getPoreskaStopaID() + "' ";
     }
 
     @Override
     public Long getObjectIDValue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return predmetProdajeID;
     }
 
     @Override
     public String getObjectIDName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "PredmetProdajeID";
     }
 
 }

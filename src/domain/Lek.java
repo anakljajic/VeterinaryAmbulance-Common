@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  *
  * @author anakl
  */
-public class Lek implements Serializable {
+public class Lek implements Serializable, DomainObject {
 
     private PredmetProdaje predmetProdaje;
     private String oznaka;
@@ -54,6 +54,46 @@ public class Lek implements Serializable {
     @Override
     public String toString() {
         return naziv;
+    }
+
+    @Override
+    public String getTableName() {
+        return "lek";
+    }
+
+    @Override
+    public String getAttributeNamesForInsert() {
+        return "PredmetProdajeID, Oznaka, Naziv";
+    }
+
+    @Override
+    public String getAttributeValuesForInsert() {
+        return "'" + predmetProdaje.getPredmetProdajeID() + "', '" + oznaka + "', '" + naziv + "'";
+    }
+
+    @Override
+    public boolean isAutoincrement() {
+        return false;
+    }
+
+    @Override
+    public void setObjectId(Long id) {
+        
+    }
+
+    @Override
+    public String getAttributeNamesForUpdate() {
+        return "";
+    }
+
+    @Override
+    public Long getObjectIDValue() {
+        return 0l;
+    }
+
+    @Override
+    public String getObjectIDName() {
+        return "";
     }
 
 }
