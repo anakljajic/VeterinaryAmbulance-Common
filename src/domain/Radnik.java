@@ -23,12 +23,12 @@ public class Radnik implements Serializable, DomainObject {
     private Date datumRodjenja;
     private String adresa;
     private String telefon;
-    private int administrator;
+    private boolean administrator;
 
     public Radnik() {
     }
 
-    public Radnik(Long radnikID, String ime, String prezime, String korisnikoIme, String lozinka, Date datumRodjenja, String adresa, String telefon, int administrator) {
+    public Radnik(Long radnikID, String ime, String prezime, String korisnikoIme, String lozinka, Date datumRodjenja, String adresa, String telefon, boolean administrator) {
         this.radnikID = radnikID;
         this.ime = ime;
         this.prezime = prezime;
@@ -38,22 +38,6 @@ public class Radnik implements Serializable, DomainObject {
         this.adresa = adresa;
         this.telefon = telefon;
         this.administrator = administrator;
-    }
-
-    public String getKorisnikoIme() {
-        return korisnikoIme;
-    }
-
-    public void setKorisnikoIme(String korisnikoIme) {
-        this.korisnikoIme = korisnikoIme;
-    }
-
-    public String getLozinka() {
-        return lozinka;
-    }
-
-    public void setLozinka(String lozinka) {
-        this.lozinka = lozinka;
     }
 
     public Long getRadnikID() {
@@ -80,6 +64,22 @@ public class Radnik implements Serializable, DomainObject {
         this.prezime = prezime;
     }
 
+    public String getKorisnikoIme() {
+        return korisnikoIme;
+    }
+
+    public void setKorisnikoIme(String korisnikoIme) {
+        this.korisnikoIme = korisnikoIme;
+    }
+
+    public String getLozinka() {
+        return lozinka;
+    }
+
+    public void setLozinka(String lozinka) {
+        this.lozinka = lozinka;
+    }
+
     public Date getDatumRodjenja() {
         return datumRodjenja;
     }
@@ -104,14 +104,15 @@ public class Radnik implements Serializable, DomainObject {
         this.telefon = telefon;
     }
 
-    public int getAdministrator() {
+    public boolean isAdministrator() {
         return administrator;
     }
 
-    public void setAdministrator(int administrator) {
+    public void setAdministrator(boolean administrator) {
         this.administrator = administrator;
     }
 
+  
     @Override
     public String toString() {
         return ime + " " + prezime;

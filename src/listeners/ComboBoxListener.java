@@ -8,5 +8,5 @@ import events.SelectionChangeEvent;
  */
 public interface ComboBoxListener {
 
-    void onChangeSelected(SelectionChangeEvent evt);
+    void onChangeSelected(SelectionChangeEvent evt, Object object);
 }
