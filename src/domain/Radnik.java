@@ -112,7 +112,6 @@ public class Radnik implements Serializable, DomainObject {
         this.administrator = administrator;
     }
 
-  
     @Override
     public String toString() {
         return ime + " " + prezime;
@@ -130,7 +129,7 @@ public class Radnik implements Serializable, DomainObject {
 
     @Override
     public String getAttributeValuesForInsert() {
-        return "'" + ime + "', '" + prezime + "', '" + new java.sql.Date(datumRodjenja.getTime()) + "', '" + adresa + "', '" + telefon + "', '" + administrator + "', '" + korisnikoIme + "', '" + lozinka + "'";
+        return "'" + ime + "', '" + prezime + "', '" + new java.sql.Date(datumRodjenja.getTime()) + "', '" + adresa + "', '" + telefon + "', " + administrator + ", '" + korisnikoIme + "', '" + lozinka + "'";
 
     }
 
@@ -146,7 +145,7 @@ public class Radnik implements Serializable, DomainObject {
 
     @Override
     public String getAttributeNamesForUpdate() {
-        return "Ime = '" + ime + "', Prezime='" + prezime + "', DatumRodjenja='" + new java.sql.Date(datumRodjenja.getTime()) + "', Adresa='" + adresa + "', Telefon = '" + telefon + "', Administrator = '" + administrator + "', KorisnickoIme = '" + korisnikoIme + "', Lozinka = '" + lozinka + "' ";
+        return "Ime = '" + ime + "', Prezime='" + prezime + "', DatumRodjenja='" + new java.sql.Date(datumRodjenja.getTime()) + "', Adresa='" + adresa + "', Telefon = '" + telefon + "', Administrator = " + administrator + ", KorisnickoIme = '" + korisnikoIme + "', Lozinka = '" + lozinka + "' ";
     }
 
     @Override

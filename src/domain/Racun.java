@@ -8,6 +8,7 @@ package domain;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -24,11 +25,12 @@ public class Racun implements Serializable, DomainObject {
     private Radnik radnik;
     private Karton karton;
     private Date datumKreiranja;
+    private List<StavkaRacuna> stavkeRacuna;
 
     public Racun() {
     }
 
-    public Racun(Long racunID, BigDecimal ukupnaCenaSaPorezom, BigDecimal ukupnaCenaBezPoreza, BigDecimal porez, boolean obradjen, boolean storniran, Radnik radnik, Karton karton, Date datumKreiranja) {
+    public Racun(Long racunID, BigDecimal ukupnaCenaSaPorezom, BigDecimal ukupnaCenaBezPoreza, BigDecimal porez, boolean obradjen, boolean storniran, Radnik radnik, Karton karton, Date datumKreiranja, List<StavkaRacuna> stavkeRacuna) {
         this.racunID = racunID;
         this.ukupnaCenaSaPorezom = ukupnaCenaSaPorezom;
         this.ukupnaCenaBezPoreza = ukupnaCenaBezPoreza;
@@ -38,8 +40,17 @@ public class Racun implements Serializable, DomainObject {
         this.radnik = radnik;
         this.karton = karton;
         this.datumKreiranja = datumKreiranja;
+        this.stavkeRacuna = stavkeRacuna;
     }
-    
+
+    public List<StavkaRacuna> getStavkeRacuna() {
+        return stavkeRacuna;
+    }
+
+    public void setStavkeRacuna(List<StavkaRacuna> stavkeRacuna) {
+        this.stavkeRacuna = stavkeRacuna;
+    }
+
     public Date getDatumKreiranja() {
         return datumKreiranja;
     }

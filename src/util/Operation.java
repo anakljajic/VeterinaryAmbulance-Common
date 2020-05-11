@@ -43,6 +43,7 @@ public class Operation implements Serializable {
     public static final int OPERATION_SELECT_ALL_TAXES = 20;
 
     public static final int OPERATION_SET_STORNO_BILL = 21;
+    public static final int OPERATION_SAVE_BILL_AND_BILL_ITEMS = 22;
 
 //    public static final int OPERATION_SAVE_RADNIK = 2;
 //    public static final int OPERATION_GET_ALL_RADNICI = 3;
